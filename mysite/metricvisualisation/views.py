@@ -6,20 +6,17 @@ from django.http import HttpResponse
 
 #access token = personal access token from https://github.com/settings/tokens
 #using access token
-g = Github(Access token)
+g = Github("Github Access token")
 
 #find hololens project
+repo_list = []
 for repo in g.get_user().get_repos():
-        myRepo = repo
-        print(repo)
+        repo_list.append(repo.name)
 
-print(myRepo.name)
-
-#Get commits to a repo
-commits = myRepo.get_commits()
-commits_sha_list = []
-for commit in commits:
-    print (commit.url)
+repo1 = repo_list[0]
+repo2 = repo_list[1]
+repo3 = repo_list[2]
+repo4 = repo_list[3]
 
 def index(request):
-    return HttpResponse(myRepo.name)
+    return render(request, 'index.html', {'repo1' : repo1, 'repo2' : repo2, 'repo3' : repo3, 'repo4' : repo4})
