@@ -1,56 +1,34 @@
-<!DOCTYPE HTML>
 <html>
-<head>
-  <script type="text/javascript">
-  window.onload = function () {
-    var chart = new CanvasJS.Chart("chartContainer",
-    {
-      title:{
-        text: "Olympic Medals of all Times (till 2012 Olympics)"
-      },
-      data: [
-      {
-        type: "bar",
-        dataPoints: [
-        { y: 198, label: "Italy"},
-        { y: 201, label: "China"},
-        { y: 202, label: "France"},
-        { y: 236, label: "Great Britain"},
-        { y: 395, label: "Soviet Union"},
-        { y: 957, label: "USA"}
-        ]
-      },
-      {
-        type: "bar",
-        dataPoints: [
-        { y: 166, label: "Italy"},
-        { y: 144, label: "China"},
-        { y: 223, label: "France"},
-        { y: 272, label: "Great Britain"},
-        { y: 319, label: "Soviet Union"},
-        { y: 759, label: "USA"}
-        ]
-      },
-      {
-        type: "bar",
-        dataPoints: [
-        { y: 185, label: "Italy"},
-        { y: 128, label: "China"},
-        { y: 246, label: "France"},
-        { y: 272, label: "Great Britain"},
-        { y: 296, label: "Soviet Union"},
-        { y: 666, label: "USA"}
-        ]
-      }
-      ]
-    });
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Repositories', 'Commits', 'Contributions', 'Pull requests'],
+          ['{{repo1}}', {{repoCommit1}}, {{repoContrib1}}, {{repoPr1}}],
+          ['{{repo2}}', {{repoCommit2}}, {{repoContrib2}}, {{repoPr2}}],
+          ['{{repo3}}', {{repoCommit3}}, {{repoContrib3}}, {{repoPr3}}],
+          ['{{repo4}}', {{repoCommit4}}, {{repoContrib4}}, {{repoPr4}}],
+          ['{{repo5}}', {{repoCommit5}}, {{repoContrib5}}, {{repoPr5}}]
+        ]);
 
-chart.render();
-}
-</script>
-<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script></head>
-<body>
-  <div id="chartContainer" style="height: 300px; width: 100%;">
-  </div>
-</body>
+        var options = {
+          chart: {
+            title: 'Metric Visualisation',
+            subtitle: 'Commits, Contributions and pull requests of users first 5 repositories',
+          },
+          bars: 'horizontal' // Required for Material Bar Charts.
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+  </head>
+  <body>
+    <div id="barchart_material" style="width: 900px; height: 500px;"></div>
+  </body>
 </html>
