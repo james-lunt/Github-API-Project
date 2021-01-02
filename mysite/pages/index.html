@@ -6,18 +6,18 @@
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Repositories', 'Commits', 'Contributions', 'Pull requests'],
-          ['{{repo1}}', {{repoCommit1}}, {{repoContrib1}}, {{repoPr1}}],
-          ['{{repo2}}', {{repoCommit2}}, {{repoContrib2}}, {{repoPr2}}],
-          ['{{repo3}}', {{repoCommit3}}, {{repoContrib3}}, {{repoPr3}}],
-          ['{{repo4}}', {{repoCommit4}}, {{repoContrib4}}, {{repoPr4}}],
-          ['{{repo5}}', {{repoCommit5}}, {{repoContrib5}}, {{repoPr5}}]
+          ['Repositories', 'Commits', 'Contributions', 'Branches'],
+          ['{{repo1}}', {{repoCommit1}}, {{repoContrib1}}, {{repoBranch1}}],
+          ['{{repo2}}', {{repoCommit2}}, {{repoContrib2}}, {{repoBranch2}}],
+          ['{{repo3}}', {{repoCommit3}}, {{repoContrib3}}, {{repoBranch3}}],
+          ['{{repo4}}', {{repoCommit4}}, {{repoContrib4}}, {{repoBranch4}}],
+          ['{{repo5}}', {{repoCommit5}}, {{repoContrib5}}, {{repoBranch5}}]
         ]);
 
         var options = {
           chart: {
             title: 'Metric Visualisation',
-            subtitle: '{{person}} : Commits, Contributions and pull requests of most recent 5 repositories',
+            subtitle: '{{person}} : Commits, Contributions and branches of most recent 5 repositories',
           },
           bars: 'horizontal' // Required for Material Bar Charts.
         };
