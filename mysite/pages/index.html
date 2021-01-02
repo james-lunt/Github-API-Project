@@ -17,7 +17,7 @@
         var options = {
           chart: {
             title: 'Metric Visualisation',
-            subtitle: 'Commits, Contributions and pull requests of users first 5 repositories',
+            subtitle: '{{person}} : Commits, Contributions and pull requests of most recent 5 repositories',
           },
           bars: 'horizontal' // Required for Material Bar Charts.
         };
@@ -28,6 +28,10 @@
       }
     </script>
   </head>
+  <form action ="find">
+    Enter username : <input type = "text" name = "search"><br>
+    <input type = "submit">
+  </form>
   <body>
     <div id="barchart_material" style="width: 900px; height: 500px;"></div>
   </body>
