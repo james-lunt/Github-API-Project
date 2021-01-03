@@ -1,12 +1,12 @@
 from django.shortcuts import render
 from github import Github
-
+from metricvisualisation import configur
 # Create your views here.
 from django.http import HttpResponse
 
 #access token = personal access token from https://github.com/settings/tokens
 #using access token
-g = Github("")
+g = Github(configur.access_token)
  
 #get repos
 def getRepos(user):
