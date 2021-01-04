@@ -13,5 +13,6 @@ Set up project on a local host witht the command:<br>
 py manage.py runserver. <br>
 run project on a browser.<br>
 
-#How it looks
-![](images/final-output.PNG?raw=true)
+# How it looks
+
+![](final-output.PNG?raw=true)
