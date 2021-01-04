@@ -1,38 +1,6 @@
-<html>
-  <head>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['bar']});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Repositories', 'Commits', 'Contributions', 'Branches'],
-          ['{{repo1}}', {{repoCommit1}}, {{repoContrib1}}, {{repoBranch1}}],
-          ['{{repo2}}', {{repoCommit2}}, {{repoContrib2}}, {{repoBranch2}}],
-          ['{{repo3}}', {{repoCommit3}}, {{repoContrib3}}, {{repoBranch3}}],
-          ['{{repo4}}', {{repoCommit4}}, {{repoContrib4}}, {{repoBranch4}}],
-          ['{{repo5}}', {{repoCommit5}}, {{repoContrib5}}, {{repoBranch5}}]
-        ]);
 
-        var options = {
-          chart: {
-            title: 'Metric Visualisation',
-            subtitle: '{{person}} : Commits, Contributions and branches of most recent 5 repositories',
-          },
-          bars: 'horizontal' // Required for Material Bar Charts.
-        };
-
-        var chart = new google.charts.Bar(document.getElementById('barchart_material'));
-
-        chart.draw(data, google.charts.Bar.convertOptions(options));
-      }
-    </script>
-  </head>
   <form action ="find">
     Enter username : <input type = "text" name = "search"><br>
+    Enter Authorisation token : <input type = "text" name = "token"><br>
     <input type = "submit">
   </form>
-  <body>
-    <div id="barchart_material" style="width: 900px; height: 500px;"></div>
-  </body>
-</html>
